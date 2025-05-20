@@ -21,7 +21,7 @@
     <input id="wininylowe" type="radio" name="radio"> Panele wininylowe <br>
     <input id="deska" type="radio" name="radio"> Deska podłogowa <br>
     <input type="submit" value="oblicz" onclick="Oblicz()">
-    <div id="output">w</div>
+    <div id="output"></div>
     </main>
     <script>
     function Oblicz() {
@@ -40,7 +40,10 @@
     else if (deska.checked) {
         koszt = (pole)*14+'zł'
     }
-    
+        if (pole||koszt==0) {
+        document.getElementById('output').innerHTML = "nuh uh!!"
+        }
+        else
         document.getElementById('output').innerHTML = "Pole powierzchni pomieszczenia: "+pole+"m2, koszt montażu "+koszt
 
     }
