@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montaż paneli podłogowych</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><img src="kolor.png" alt="firma usługowa"></header>
+    <section id="menu">
+        <a href="index.html">Strona Główna</a>
+        <a href="oferta.html">Oferta</a>
+        <a href="koszty.html">Kalkulator kosztów</a>
+    </section>
+    <main>
+    <h1>Kalkulator kosztów montażu</h1>
+    Szerokość pomieszczenia [m]: <input id="room_width" type="number"> 
+    Długość pomieszczenia [m]:  <input id="room_length" type="number"> <br>
+    <input id="laminowane" type="radio"> Panele laminowane <br>
+    <input id="wininylowe" type="radio"> Panele wininylowe <br>
+    <input id="deska" type="radio"> Deska podłogowa <br>
+    <input type="submit" value="oblicz" onclick="Oblicz()">
+    <div id="output">w</div>
+    </main>
+    <script>
+    function Oblicz() {
+
+        var koszt = 0
+        var width = document.getElementById('room_width').value
+        var length = document.getElementById('room_length').value
+        var pole = width*length
+
+    if (laminowane.checked) {
+        koszt = (pole)*12+'zł'
+    }
+    else if (wininylowe.checked) {
+        koszt = (pole)*14+'zł'
+    }
+    else if (deska.checked) {
+        koszt = (pole)*14+'zł'
+    }
+    
+        document.getElementById('output').innerHTML = "Pole powierzchni pomieszczenia: "+pole+"m2, koszt montażu "+koszt
+
+    }
+    </script>
+    <footer><h5>Autor strony: Jeremiaszek Makochoniek</h5></footer>
+</body>
+</html>
